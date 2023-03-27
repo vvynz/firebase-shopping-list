@@ -7,11 +7,13 @@ html, body {
   
 }
 
-#container {
-  display: block;
-  margin: 0 auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  
+  margin: 50px auto;
   background-color: #EEF0F4;
-  width: 500px;
+  max-width: 320px;
   height: 600px;
   border: 5px solid #000;
   border-radius: 12px;
