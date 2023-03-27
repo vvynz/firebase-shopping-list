@@ -14,7 +14,7 @@ html, body {
   margin: 50px auto;
   background-color: #EEF0F4;
   max-width: 320px;
-  height: 400px;
+  height: 350px;
   border: 5px solid #000;
   border-radius: 12px;
 }
@@ -25,14 +25,18 @@ img {
 }
 
 input, button {
+  font-family: "Rubik", sans-serif;
   border: none;
-  padding: 10px 40px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 7px;
+  margin: 0 12px;
 }
 
 input {
   color: #432000;
   background-color: #DCE1EB;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 button {
