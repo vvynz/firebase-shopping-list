@@ -30,7 +30,7 @@ function addToCart() {
 }
 
 onValue(shoppingListInDB, function(snapshot) {
-  let listItems = Object.values(snapshot.val());
+  let listItems = Object.entries(snapshot.val());
   clearInput();
   clearShoppingList();
   
@@ -47,6 +47,17 @@ function clearShoppingList() {
   listEl.innerHTML = "";
 }
 
-function addListItem(listItem) {
-  listEl.innerHTML += `<li>${listItem}</li>`;
+function addListItem(item) {
+  // create 2 variables, 1 for itemID, itemValue
+  let itemID = item[0];
+  let itemValue = item[1];
+
+  // create a new li el
+  let newListItem = document.createElement("li");
+
+  newListItem.textContent = itemValue;
+
+  // append new li el to our ul
+  listEl.append(newListItem)
+
 }
