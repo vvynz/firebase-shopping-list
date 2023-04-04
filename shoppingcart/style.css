@@ -2,9 +2,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
-  /* background-color: #EEF0F4; */
-
-  
 }
 
 .container {
@@ -12,7 +9,7 @@ html, body {
   flex-direction: column;
   
   margin: 50px auto;
-  background-color: #EEF0F4;
+  background-color: rgb(255, 220, 220);
   max-width: 320px;
   /* border: 5px solid #000; */
   border-radius: 12px;
@@ -33,16 +30,29 @@ input, button {
 
 input {
   color: #432000;
-  background-color: #DCE1EB;
+  background-color: #effaff;
   text-align: center;
   margin-bottom: 10px;
 }
 
 button {
   color: #FDFDFD;
-  background-color: #AC485A;
+  background-color: #9b172d;
 }
 
-li {
-  list-style: decimal;
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 10px 20px;
+}
+
+ul li {
+  background-color: #fcfcfc;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px 20px;
+  border-radius: 7px;
+  flex-grow: 1;
+  text-align: center;
 }
