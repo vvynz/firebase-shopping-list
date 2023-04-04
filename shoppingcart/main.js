@@ -28,12 +28,14 @@ function addToCart() {
   push(shoppingListInDB, inputValue);
   console.log(`${inputValue} was added!`);
 
-  // my initial appreach
-  //   let listItemEl = document.createElement("li");
+  clearInput(inputEl);
+  addListItem(inputValue);
+}
 
-  //   listItemEl.innerHTML = inputValue;
-  //   listEl.appendChild(listItemEl);
+function clearInput(input) {
+  input.value = "";
+}
 
-  inputEl.value = "";
-  listEl.innerHTML += `<li>${inputValue}</li>`;
+function addListItem(listItem) {
+  listEl.innerHTML += `<li>${listItem}</li>`;
 }
