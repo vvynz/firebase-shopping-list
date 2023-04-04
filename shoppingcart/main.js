@@ -3,6 +3,7 @@ import {
   getDatabase,
   ref,
   push,
+  onValue
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -13,8 +14,6 @@ const appSettings = {
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
 const shoppingListInDB = ref(database, "shoppingList");
-
-//console.log(app);
 
 const inputEl = document.getElementById("input-field");
 const addButtonEl = document.getElementById("add-button");
@@ -31,6 +30,11 @@ function addToCart() {
   clearInput(inputEl);
   addListItem(inputValue);
 }
+
+onValue(shoppingListInDB, function(snapshot) {
+  let listItems = Object.values(snapshot.val());
+  console.log(listItems)
+})
 
 function clearInput(input) {
   input.value = "";
