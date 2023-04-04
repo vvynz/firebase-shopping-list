@@ -33,15 +33,15 @@ function addToCart() {
 
 onValue(shoppingListInDB, function(snapshot) {
   let listItems = Object.values(snapshot.val());
-  clearInput(listItems);
+  clearInput();
   
   for (let item of listItems) {
     addListItem(item)
   }
 })
 
-function clearInput(input) {
-  input.value = "";
+function clearInput() {
+  inputEl.value = "";
 }
 
 function addListItem(listItem) {
