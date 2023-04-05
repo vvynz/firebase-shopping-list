@@ -3,7 +3,8 @@ import {
   getDatabase,
   ref,
   push,
-  onValue
+  onValue,
+  remove
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -60,4 +61,9 @@ function addListItem(item) {
   // append new li el to our ul
   listEl.append(newListItem)
 
+  // add eventlistener to new list item
+  newListItem.addEventListener("dblclick", function() {
+    let selectedItemInDB = ref(database, `shoppingList/${itemID}`)
+    remove(selectedItemInDB);
+  })
 }
