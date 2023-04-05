@@ -4,7 +4,7 @@ import {
   ref,
   push,
   onValue,
-  remove
+  remove,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -30,15 +30,19 @@ function addToCart() {
   clearInput(inputEl);
 }
 
-onValue(shoppingListInDB, function(snapshot) {
-  let listItems = Object.entries(snapshot.val());
-  clearInput();
-  clearShoppingList();
-  
-  for (let item of listItems) {
-    addListItem(item)
+onValue(shoppingListInDB, function (snapshot) {
+  if (snapshot.exists()) {
+    let listItems = Object.entries(snapshot.val());
+    clearInput();
+    clearShoppingList();
+
+    for (let item of listItems) {
+      addListItem(item);
+    }
+  } else {
+    listEl.innerHTML = "No items here...yet";
   }
-})
+});
 
 function clearInput() {
   inputEl.value = "";
@@ -59,11 +63,11 @@ function addListItem(item) {
   newListItem.textContent = itemValue;
 
   // append new li el to our ul
-  listEl.append(newListItem)
+  listEl.append(newListItem);
 
   // add eventlistener to new list item
-  newListItem.addEventListener("dblclick", function() {
-    let selectedItemInDB = ref(database, `shoppingList/${itemID}`)
+  newListItem.addEventListener("dblclick", function () {
+    let selectedItemInDB = ref(database, `shoppingList/${itemID}`);
     remove(selectedItemInDB);
-  })
+  });
 }
