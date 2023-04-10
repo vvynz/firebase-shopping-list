@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Rubik", sans-serif;
+  font-family: "Gaegu", cursive;
   color: #9d734c;
   background-color: #effaff;
 }
@@ -23,7 +23,7 @@ img {
 }
 
 input, button {
-  font-family: "Rubik", sans-serif;
+  font-family: "Gaegu", cursive;
   border: none;
   padding: 20px;
   border-radius: 7px;
